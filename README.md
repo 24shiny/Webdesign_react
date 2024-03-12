@@ -1,4 +1,8 @@
-# 
+# setup : create React App
+(my git link)dkfdf
+
+## enter "npm start" on the terminal of VSc code
++ execute through http://localhost:3000
 
 <!-- # Getting Started with Create React App
 

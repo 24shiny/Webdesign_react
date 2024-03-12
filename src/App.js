@@ -1,28 +1,27 @@
-import logo from './logo.svg';
+
 import './App.css';
+// import MainHeader from './01/MainHeader';
+// import Greeting from './01/Greeting';
+import MyClock from './MyClock';
 
 function App() {
   return (
     <>
     <div className="App">
-      <header className="App-header">
-        <p>
-          you go carrot!
-        </p>
-        <img src={logo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <MainHeader /> */}
+      {/* start on March 8th */}
+      {/* <Greeting />
+      <Greeting />
+      <Greeting /> */}
+      <MyClock />
     </div>
-    <div>start on March 8th</div>
+    <div>
+
+    </div>
     </>
   );
 }
-
+// const App = () =>{ //without using the "function" keyword
+//   return();
+// }
 export default App;
