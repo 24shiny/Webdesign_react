@@ -1,0 +1,21 @@
+div{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    height: 90vh;
+}
+
+#logo{
+    width: 70%;
+    height: 70%;
+}
+
+#greeting{
+    color: aliceblue;
+    font-weight: bold;
+    font-size: larger;
+}
+

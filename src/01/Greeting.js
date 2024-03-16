@@ -12,6 +12,7 @@ function Greeting() {
 
     return (
         // how to apply styles
+        // conditional rendering
         <h1>
         <span style={st1}>hello</span>
         <span style={{display:"inline-flex",margin:"10px",color:"black"}}>
