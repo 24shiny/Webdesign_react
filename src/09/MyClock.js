@@ -3,10 +3,10 @@ import MyClockTime from "./MyClockTime";
 
 function MyClock(){
     return (
-        <>
+        <div className="flex flex-col">
         <MyClockImage />
-        <MyClockTime />
-        </>
+        <div><MyClockTime /></div>
+        </div>
     );
 }
 
