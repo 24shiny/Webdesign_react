@@ -3,7 +3,8 @@
 // import TrafficMain from "./11/TrafficMain";
 // import RefVal from "./12/RefVal";
 // import RefInput from "./12/RefInput";
-import BrandNewBoxOffice from "./13/BrandNewBoxOffice";
+// import BrandNewBoxOffice from "./13/BrandNewBoxOffice";
+import GalleryMain from "./14/GalleryMain";
 function App() {
   const apiKey = process.env.REACT_APP_MV_KEY;
   console.log(apiKey)
@@ -12,12 +13,8 @@ function App() {
       <header className="flex justify-center my-8">
         <h1 className="font-bold text-2xl">REACT</h1>
       </header>
-      <main className="w-full flex justify-center"> 
-      {/* className="w-full h-screen flex justify-center" */}
-        {/* <TrafficMain /> */}
-        {/* <RefVal /> */}
-        {/* <RefInput /> */}
-        <BrandNewBoxOffice />
+      <main className="w-4/5 flex justify-center items-center"> 
+        <GalleryMain />
       </main>
     </div>
   );

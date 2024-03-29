@@ -3,7 +3,7 @@ import BrandNewMovie from './BrandNewMovie';
 import BrandNewHead from './BrandNewHead';
 import BrandNewInfo from './BrandNewInfo';
 import InputBox from '../UI/InputBox';
-import { useEffect, useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 
 export default function BrandNewBoxOffice() {
 
@@ -16,10 +16,6 @@ export default function BrandNewBoxOffice() {
     url = url + `key=${process.env.REACT_APP_MV_KEY}&targetDt=${selDate}`
     fetch(url).then(resp=>resp.json()).then(data=>setBoxList(data.boxOfficeResult.dailyBoxOfficeList));
   }
-
-  // useEffect(()=>{ 
-
-  // },[getItems]);
 
   const handle_change = () => {
     let selDate = boxRef.current.value.replaceAll('-','');
