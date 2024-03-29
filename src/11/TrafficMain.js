@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react" ;
-import TrafficNav from "./TrafficNav";
+// import BusanFestivalCard from "../15/BusanFestivalCard";
 
 export default function TrafficMain() {
   const [tdata, setTdata] = useState() ;  //전체 fetch 데이터(17개배열)
@@ -24,8 +24,8 @@ export default function TrafficMain() {
     // url = `${url}serviceKey=${process.env.REACT_APP_APIKEY}`;
     let url = 'https://api.odcloud.kr/api/15070282/v1/uddi:00e5cb5a-ecdf-4190-a499-ba3a6b2a8db9?page=1&perPage=20&serviceKey=UCYaXlpjGxS5%2FJ7h7qX2GEhKDTusFAoSB2pd1hTL585cgbYuYn9DD9YoKIRw%2Fu4xuTjbPlpAIExBWecfsD2XXg%3D%3D'
     // console.log(url)
-
     getDataFetch(url) ;
+    console.log(tdata);
   }, []);
 
   useEffect(() => {
@@ -54,13 +54,13 @@ export default function TrafficMain() {
     setMsg(msg);
   },[selC2])
 
-  // useEffect(()=>{
-  //   const keyArr = ['사고건수','사망자수','중상자수','경상자수','부상신고자수'];
+  useEffect(()=>{
+    const keyArr = ['사고건수','사망자수','중상자수','경상자수','부상신고자수'];
     
-  //   let rawInfo = keyArr.map((item)=>detail.item)
+    let rawInfo = keyArr.map((item)=>detail.item)
     
-  //   setInfo(rawInfo);
-  // },[detail])
+    setInfo(rawInfo);
+  },[detail])
 
   return (
     <div className="flex flex-col my-5 p-10 h-1/3 align-middle border-solid border-slate-950 border-2 border-bold">

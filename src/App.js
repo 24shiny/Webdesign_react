@@ -4,7 +4,8 @@
 // import RefVal from "./12/RefVal";
 // import RefInput from "./12/RefInput";
 // import BrandNewBoxOffice from "./13/BrandNewBoxOffice";
-import GalleryMain from "./14/GalleryMain";
+// import GalleryMain from "./14/GalleryMain";
+import BusanFestivalMain from "./15/BusanFestivalMain";
 function App() {
   const apiKey = process.env.REACT_APP_MV_KEY;
   console.log(apiKey)
@@ -14,7 +15,7 @@ function App() {
         <h1 className="font-bold text-2xl">REACT</h1>
       </header>
       <main className="w-4/5 flex justify-center items-center"> 
-        <GalleryMain />
+        <BusanFestivalMain />
       </main>
     </div>
   );
