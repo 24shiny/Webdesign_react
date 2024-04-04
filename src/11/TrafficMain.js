@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react" ;
-// import BusanFestivalCard from "../15/BusanFestivalCard";
-
+import TrafficNav from "./TrafficNav"
 export default function TrafficMain() {
   const [tdata, setTdata] = useState() ;  //전체 fetch 데이터(17개배열)
   const [c1, setC1] = useState() ;        //대분류(중복제거)
@@ -54,13 +53,13 @@ export default function TrafficMain() {
     setMsg(msg);
   },[selC2])
 
-  useEffect(()=>{
-    const keyArr = ['사고건수','사망자수','중상자수','경상자수','부상신고자수'];
+  // useEffect(()=>{
+  //   const keyArr = ['사고건수','사망자수','중상자수','경상자수','부상신고자수'];
     
-    let rawInfo = keyArr.map((item)=>detail.item)
+  //   let rawInfo = keyArr.map((item)=>detail.item)
     
-    setInfo(rawInfo);
-  },[detail])
+  //   setInfo(rawInfo);
+  // },[detail])
 
   return (
     <div className="flex flex-col my-5 p-10 h-1/3 align-middle border-solid border-slate-950 border-2 border-bold">
