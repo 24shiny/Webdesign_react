@@ -15,7 +15,7 @@ export default function TrafficMain() {
   }
 
   useEffect(()=>{
-    let url= `https://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=UCYaXlpjGxS5%2FJ7h7qX2GEhKDTusFAoSB2pd1hTL585cgbYuYn9DD9YoKIRw%2Fu4xuTjbPlpAIExBWecfsD2XXg%3D%3D&pageNo=1&numOfRows=100&resultType=json`
+    let url= `https://apis.data.go.kr/6260000/FestivalService/getFestivalKr?serviceKey=${process.env.REACT_APP_API_KEY}&pageNo=1&numOfRows=100&resultType=json`
     // console.log(url);
     getDataFetch(url);
   }, []);

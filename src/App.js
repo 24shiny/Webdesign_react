@@ -12,6 +12,8 @@ import BusanFestivalMain from "./15/BusanFestivalMain"
 import ForcastMain from "./17/ForcastMain";
 import ShortForcast from "./17/ShortForcast";
 import ExShortForcast from "./17/ExShortForcast";
+import ForcastList from "./17/ForcastList";
+import RMain from "./18/RMain";
 
 function App() {
   const apiKey = process.env.REACT_APP_MV_KEY;
@@ -39,6 +41,8 @@ function App() {
           <Route path="/forcast" element={<ForcastMain />} />
           <Route path="/shortforcast/:dt/:area/:x/:y" element={<ShortForcast />} />
           <Route path="/exshortforcast/:dt/:area/:x/:y" element={<ExShortForcast />} />
+          <Route path="/forcastlist" element={<ForcastList />} />
+          <Route path="/recoil" element={<RMain />} />
         </Routes>
       </main>
       <footer></footer>

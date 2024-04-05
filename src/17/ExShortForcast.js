@@ -15,6 +15,7 @@ export default function ExShortForcast() {
   const sRef = useRef() ;
   const [selTm, setSelTm] = useState([]);
   const [desc, setDesc] = useState();
+ 
   const getData = (url) => { 
     fetch(url).then(resp=>resp.json()).then(data=>setTdata(data.response.body.items.item));
 }
@@ -26,7 +27,7 @@ export default function ExShortForcast() {
 // }
 
 useEffect(()=>{
-  let url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?serviceKey=UCYaXlpjGxS5%2FJ7h7qX2GEhKDTusFAoSB2pd1hTL585cgbYuYn9DD9YoKIRw%2Fu4xuTjbPlpAIExBWecfsD2XXg%3D%3D&pageNo=1&numOfRows=1000&dataType=JSON&base_date=${dt}&base_time=0630&nx=${x}&ny=${y}`
+  let url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?serviceKey=${process.env.REACT_APP_API_KEY}&numOfRows=1000&dataType=JSON&base_date=${dt}&base_time=0630&nx=${x}&ny=${y}`
   // console.log(url);
   getData(url);
 },[])
@@ -66,10 +67,10 @@ const handleSelect = () => {
   setSelTm(tm3);
 }
 
-useEffect(()=>{
-  const description = getcode.filter(item=>item.항목값===sRef.current.value && item.예보구분==="초단기예보")
-  setDesc(description[0].항목명);
-},[selTm])
+// useEffect(()=>{
+//   const description = getcode.filter(item=>item.항목값===sRef.current.value && item.예보구분==="초단기예보")
+//   setDesc(description[0].항목명);
+// },[selTm])
 
   return (
 <div className="w-full overflow-x-auto">
@@ -78,7 +79,7 @@ useEffect(()=>{
                       array = {cate}
                       handle_select = {handleSelect}
                       selRef = {sRef} />
-    <p>{desc} 정보 :</p>
+    {/* <p>{desc} 정보 :</p> */}
     <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>

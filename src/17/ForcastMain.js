@@ -24,8 +24,9 @@ export default function ForcastMain() {
     useEffect(()=>{
         console.log("dt : ", dt);
     },setDt)
-    //초단기예보
-    const handleUtra = () => {
+
+    //예보선택
+    const handle_choice = (choice) => {
       if (dt === '' || dt === undefined) {
         alert('날짜를 선택하세요.') ;
         dRef.current.focus();
@@ -37,25 +38,12 @@ export default function ForcastMain() {
         return;
       }
   
-      navigator(`/exshortforcast/${dt}/${area}/${x}/${y}`) ;
+      // navigator(`/${choice}forcast/${dt}/${area}/${x}/${y}`) ;
+      let classification;
+      if (choice=='exshort') classification="초단기예보";
+      else classification="단기예보";
+      navigator(`/forcastlist?dt=${dt}&area=${area}&x=${x}&y=${y}&classification=${classification}`) ;
     }
-  
-      //초단기예보
-      const handleShort = () => {
-        if (dt === '' || dt === undefined) {
-          alert('날짜를 선택하세요.') ;
-          dRef.current.focus();
-          return;
-        }
-        if (area === '' || area === undefined) {
-          alert('지역을 선택하세요.') ;
-          sRef.current.focus();
-          return;
-        }
-    
-        navigator(`/shortforcast/${dt}/${area}/${x}/${y}`) ;
-        
-      }
 
     const handleArea = () => {
       if (sRef.current.value === '' || sRef.current.value === undefined) return ; 
@@ -86,12 +74,12 @@ export default function ForcastMain() {
         </div>
         <div>
         <Buttons caption = "초단기예보"
-                    handleClick = {handleUtra} 
+                    handleClick = {()=>{handle_choice('exshort')}} 
                     /> 
         </div>
         <div>
         <Buttons caption = "단기예보"
-                   handleClick = {handleShort}    
+                   handleClick = {()=>{handle_choice('short')}}    
                     /> 
         </div>
       </div>

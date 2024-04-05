@@ -15,6 +15,7 @@ export default function AppNav() {
       <Buttons caption="tourist information" handleClick={()=>{navigator("/gallery")}} />
       <Buttons caption="Busan Festival" handleClick={()=>{navigator("/busanfestival")}}/>
       <Buttons caption="Weather forcast" handleClick={()=>{navigator("/forcast")}}/>
+      <Buttons caption="Recoil" handleClick={()=>{navigator("/recoil")}}/>
     </div>
   )
 }
